@@ -1,0 +1,52 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+  <h3 class="post-detail-title">{{ post.title }}</h3>
+
+  {% if post.published_date %}
+    <div class="date postdate">
+      Published: {{ post.published_date|date:"m-d-Y" }}
+    </div>
+  {% else %}
+    <a class="btn btn-orange" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+  {% endif %}
+
+  <p class="postcontent">{{ post.text|safe|linebreaksbr }}</p>
+
+  {% if user.is_authenticated %}
+  <div class="show-always post-width">
+    <a class="btn btn-outline-dark" href="{% url 'post_edit' pk=post.pk %}">
+      <i class="bi bi-pencil"></i><span class="show-on-hover"> Edit</span>
+    </a>
+    <a class="btn btn-outline-dark" href="{% url 'post_remove' pk=post.pk %}">
+      <i class="bi bi-backspace"></i><span class="show-on-hover"> Delete</span>
+    </a>
+  </div>
+  {% endif %}
+
+  <hr>
+
+  <div class="container">
+    {% for comment in post.comments.all %}
+      {% if user.is_authenticated or comment.approved_comment %}
+        <p class="date">Comment: {{ comment.create_date|date:"m-d-Y" }}</p>
+        <p>{{ comment.text|safe|linebreaksbr }}</p>
+        <p><strong>Posted by: {{ comment.author }}</strong></p>
+        {% if not comment.approved_comment %}
+        <div class="show-always comment-width">
+          <a class="btn btn-outline-dark" href="{% url 'comment_approve' pk=comment.pk %}">
+            <i class="bi bi-check-square"></i><span class="show-on-hover"> Approve</span>
+          </a>
+          <a class="btn btn-outline-dark" href="{% url 'comment_remove' pk=comment.pk %}">
+            <i class="bi bi-backspace"></i><span class="show-on-hover"> Remove</span>
+          </a>
+        </div>
+        {% endif %}
+      {% endif %}
+      <hr>
+      {% empty %}
+        <p>No comments.</p>
+    {% endfor %}
+    </div>
+    <a class="btn btn-orange" href="{% url 'add_comment_to_post' pk=post.pk %}">Add Comment</a>
+
+{% endblock %}

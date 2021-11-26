@@ -1,0 +1,94 @@
+a {
+  text-decoration: none;
+  color: rgb(213, 72, 40);
+}
+
+a:hover {
+  color: black;
+}
+
+body {
+  background-color: rgb(255, 226, 195);
+}
+
+.btn-orange {
+  background-color: rgb(213, 72, 40);
+  color: white;
+}
+
+nav a:hover {
+  color: white !important;
+}
+
+a.navbar-hover-black:hover {
+  color: black !important;
+}
+
+.comment-width {
+  width: 220px;
+}
+.navbar-font li a{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.5em;
+}
+
+.navbar-orange {
+  color: rgb(213, 72, 40);
+}
+
+.navbar-font-bold {
+  font-weight: 900;
+}
+
+.navbar-active {
+  background-color: rgb(255, 226, 195);
+  border-radius: 10px 10px 0 0;
+}
+
+.navbar-padding {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.post-title {
+  margin-bottom: 5px;
+}
+
+.post-confirm {
+  margin-top: 15px;
+}
+
+.post-detail-title {
+  margin-top: 15px;
+}
+
+.post-width {
+  width: 175px;
+}
+
+.date {
+  background-color: rgb(41, 43, 44);
+  border-radius: 10px;
+  color: white;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  text-align: center;
+  width: 175px;
+}
+
+.show-on-hover {
+  display: none;
+}
+
+.show-always:hover .show-on-hover {
+  display: inline;
+}
+
+.welcome {
+  color: white;
+}
+
+.centerstage {
+  margin-left: auto;
+  margin-right: auto;
+}
