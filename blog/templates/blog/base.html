@@ -11,13 +11,12 @@
     <link rel="stylesheet" href="{% static 'css/themes/default.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;600;800&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    <!-- font-family: 'Bebas Neue', cursive; font-family: 'Roboto Condensed', sans-serif;  -->
   </head>
   <body>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-dark bg-dark navbar-padding">
+    <nav class="navbar fixed-top navbar-dark bg-dark navbar-padding">
       <ul class="nav navbar-font">
         <li class="nav-item">
           {% url 'post_list' as url %}
@@ -49,6 +48,9 @@
         <ul class="nav navbar-right navbar-font">
           {% if user.is_authenticated %}
           <li class="nav-item">
+            <a href="{% url 'admin:index' %}" class="nav-link navbar-orange">Admin</a>
+          </li>
+          <li class="nav-item">
             {% url 'post_new' as url %}
             <a href="{{ url }}"
             {% if request.path == url %} class="nav-link navbar-orange navbar-active navbar-hover-black"
@@ -76,7 +78,7 @@
     <div class="content container">
       <div class="row">
         <div class="col-md-8">
-          <div class="blog_posts">
+          <div class="blog-posts">
             {% block content %}
             {% endblock %}
           </div>

@@ -10,7 +10,7 @@
     <a class="btn btn-orange" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
   {% endif %}
 
-  <p class="postcontent">{{ post.text|safe|linebreaksbr }}</p>
+  <div class="postcontent post-body-font">{{ post.text|safe|linebreaksbr }}</div>
 
   {% if user.is_authenticated %}
   <div class="show-always post-width">
@@ -29,7 +29,7 @@
     {% for comment in post.comments.all %}
       {% if user.is_authenticated or comment.approved_comment %}
         <p class="date">Comment: {{ comment.create_date|date:"m-d-Y" }}</p>
-        <p>{{ comment.text|safe|linebreaksbr }}</p>
+        <div class="post-body-font">{{ comment.text|safe|linebreaksbr }}</div>
         <p><strong>Posted by: {{ comment.author }}</strong></p>
         {% if not comment.approved_comment %}
         <div class="show-always comment-width">
