@@ -45,13 +45,42 @@ a.navbar-hover-black:hover {
   border-radius: 10px 10px 0 0;
 }
 
+.blog-posts {
+  margin-top: 75px;
+}
+
 .navbar-padding {
   padding-bottom: 0;
   padding-top: 0;
 }
 
+.new-post-title {
+  border: solid black 2px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  width: 295px;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 600;
+}
+
+.post-body-font {
+  margin-top: 15px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 1.5em;
+}
+
 .post-title {
   margin-bottom: 5px;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 600;
+}
+
+.post-draft-title {
+  margin-bottom: 5px;
+  margin-top: 10px;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 600;
 }
 
 .post-confirm {
@@ -60,6 +89,13 @@ a.navbar-hover-black:hover {
 
 .post-detail-title {
   margin-top: 15px;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 600;
+}
+
+.post-list-text {
+  font-family: 'Dosis', sans-serif;
+  font-size: 1.25em;
 }
 
 .post-width {
